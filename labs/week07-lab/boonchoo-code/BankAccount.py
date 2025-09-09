@@ -1,4 +1,4 @@
-class BankAccount:
+ class BankAccount:
     """A simple bank account class"""
     
     def __init__(self, account_holder, initial_balance=0):

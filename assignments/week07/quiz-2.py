@@ -19,29 +19,36 @@ class Student:
 
     # Method to add a grade
     def add_grade(self, grade):
-        pass
+        self.grades.append(grade)
 
     # Method to get the average grade
     def get_average_grade(self):
-        pass
+        if not self.grades:
+            return 0  # or None
+        total = sum(g["grade"] for g in self.grades)
+        return total / len(self.grades)
 
     # Method to get the grade report
     def get_grade_report(self):
-        pass
+        report = []
+        for g in self.grades:
+            report.append(f"{g['subject']}: {g['grade']}")
+        return "\n".join(report)
 
 
+# ทดสอบ class
 student = Student("John", 20, "S123")
 student.add_grade(
     {
-        "subject": "Math", 
-        "grade": 85
+        "subject": "Math",
+        "grade" : 85
     }
 )
 student.add_grade(
     {
         "subject": "Science",
-        "grade": 92
+        "grade" : 92
     }
 )
-print(student.get_average_grade())  # Should print 88.5
-print(student.get_grade_report())   # Should show all grades
+print(student.get_average_grade())   # Should print 88.5
+print(student.get_grade_report())    # Should show  
