@@ -63,3 +63,30 @@ def get_range_hint(number, current_min=1, current_max=100):
 def get_thefirst_digit_hint(number):
     # Retun the first digit of the number
     pass
+import random
+
+random_number = random.randint(1, 100)
+attempt = 1
+
+while True:
+    guess_number = int(input(f"Attempt {attempt} - Enter your guess: "))
+
+    if guess_number == random_number:
+        print("Congratulations! You won in {attempt} attempts!")
+        break
+    elif guess_number > random_number:
+        print("Too high!")
+    else:
+        print("Too low!")
+
+    if attempt == 3:
+        print("get_parity_hint(random_number)")
+    elif attempt == 5:
+        print ("get_divisibilly_hint (random_number)")
+    elif attempt == 7:
+        print(get_range_hint(random_number,current_min=1,current_max=100))
+    elif attempt == 10:
+        print(get_thefirst_digit_hint(random_number))
+
+    attempt += 1
+

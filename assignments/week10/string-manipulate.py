@@ -47,3 +47,23 @@ Transformations:
 USE: len(), split(), count(), upper(), lower(), title(), slicing operations
 
 """
+string = "the quick Brown for jumpes Over"
+
+print("=== TEXT ANALYSIS REPORT===")
+print("Character Analtsis :")
+print("-Total Characters : %d(withspaces), %d(without spaces)" % (len(string), len(string)-string.count("")))
+strlower = string.lower()
+vowels = strlower.count("a") + strlower.count("e") + strlower.count("i") + strlower.count("o")+ strlower.count("u")
+vowelsStr=" "
+for char in strlower:
+    if char in["a","e","i","o","u"]:
+        vowelsStr += char
+
+print("- vowels: %d (%s)" % (vowels, vowelsStr))
+print ("- Consonants: %d", len(string)-string.count(" ")-vowels)
+
+words=string.split
+print("Word analysis:")
+print("total words:", len(words))
+
+ 
